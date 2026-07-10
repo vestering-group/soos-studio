@@ -1,7 +1,7 @@
-# Telescope — Style Reference
+# soos.studio — Design System
 > Editorial pasteboard on cream paper. A warm bone-white canvas with full-bleed magazine photography, one bright lime accent, and serif headlines that lay out around the images like an art director's spread.
 
-**Theme:** light
+**Theme:** light · **Implementatie:** de tokens hieronder staan als Tailwind `@theme` in [`src/styles/global.css`](src/styles/global.css). Beausite (commercieel) is in de implementatie vervangen door Instrument Serif; DM Mono wordt ongewijzigd gebruikt.
 
 Telescope reads as an editorial fashion magazine printed on warm cream paper: a nearly monochrome world of bone-white canvas, warm near-black type, and full-bleed editorial photography, punctuated by a single vivid lime accent that signals the only interactive surface. The UI is stripped to the bone — no cards, no panels, no decorative chrome — with a fixed bottom bar in mono caps doing all the navigation work and photos floating freely into the headline as if laid out on a pasteboard. Typography does the heavy lifting: a quiet custom serif at generous sizes with tight negative tracking whispers rather than shouts, while the mono labels at 12px are the only typographic texture outside the serif system. Everything is sharp at 2px corners, spacing is generous, and the lime green is rationed — one button, nothing else.
 

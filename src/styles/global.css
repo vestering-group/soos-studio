@@ -2,8 +2,8 @@
 
 /*
   Designsysteem "Telescope" — editorial pasteboard op cream paper.
-  Zie DESIGN.md. Beausite is commercieel; Instrument Serif is het
-  vrij beschikbare substituut (zelfde single-weight 400 karakter).
+  Zie DESIGN.md. Hoofdlettertype: DM Sans (moderne grotesk, zoals de
+  referentiesite zelf); DM Mono voor UI-labels.
   De lime-accentkleur uit de referentie is vervangen door blush rosé.
 */
 @theme {
@@ -15,7 +15,7 @@
   --color-blush: #f2c4ce;
 
   /* Typography */
-  --font-serif: "Instrument Serif", Georgia, "Times New Roman", serif;
+  --font-sans: "DM Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   --font-mono: "DM Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 
   /* Type scale */
@@ -49,8 +49,15 @@ html {
 body {
   background: var(--color-bone-paper);
   color: var(--color-ink);
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
+}
+
+/* Koppen in medium gewicht met strakke tracking — grotesk-look */
+h1,
+h2,
+h3 {
+  font-weight: 500;
 }
 
 /* Mono UI-label: het enige typografische contrast naast de serif */
@@ -175,7 +182,8 @@ body {
 
 /* Groot wordmark onderaan: de "o" is een wisselend beeld */
 .wordmark {
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
+  font-weight: 500;
   font-size: clamp(44px, 12.5vw, 220px);
   line-height: 1;
   letter-spacing: -0.02em;

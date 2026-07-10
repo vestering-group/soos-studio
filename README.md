@@ -8,7 +8,7 @@ Marketingwebsite van **soos.studio** — de contentstudio van Isabella Koper. Fo
 
 - **[Astro](https://astro.build)** — gekozen boven Next.js omdat dit een pure contentsite is: Astro levert statische HTML met vrijwel geen JavaScript, wat de snelst mogelijke laadtijd geeft en gratis hosting op GitHub Pages mogelijk maakt.
 - **[Tailwind CSS v4](https://tailwindcss.com)** — met de designtokens uit `DESIGN.md` als `@theme` in `src/styles/global.css`.
-- **Fonts:** Instrument Serif (substituut voor Beausite) en DM Mono, self-hosted via Fontsource.
+- **Fonts:** DM Sans (koppen & body) en DM Mono (UI-labels), self-hosted via Fontsource.
 
 ## Lokaal draaien
 

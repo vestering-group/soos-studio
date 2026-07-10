@@ -15,9 +15,9 @@ export const site = {
   // In te vullen door Isabella:
   email: 'hallo@soos.studio', // TODO: definitief e-mailadres
   telefoon: '', // TODO: telefoonnummer (optioneel)
-  kvk: '', // TODO: KvK-nummer
-  instagram: 'https://instagram.com/soos.studio', // TODO: controleer handle
-  tiktok: '', // TODO: TikTok-link
+  kvk: '99421194',
+  instagram: '', // bewust leeg: geen social links op de site
+  tiktok: '',
   // Maak een gratis formulier aan op formspree.io en plak het ID hieronder,
   // bijv. 'https://formspree.io/f/abcdwxyz'. Tot die tijd valt het formulier
   // terug op een e-maillink.
@@ -30,45 +30,37 @@ export const hero = {
   kopFotoAlt: 'Sfeerbeeld uit een lokale zaak',
   kopNa: 'zoals ’ie écht is.',
   subkop:
-    'Wij zijn soos.studio, de contentstudio van Isabella Koper. Eén ochtend per maand komen we shooten in jouw zaak en jij krijgt een maand aan plaatsklare reels en foto’s die nieuwe klanten binnenbrengen. Jij runt je zaak, wij regelen je socials.',
+    'Eén ochtend per maand komen we shooten in jouw zaak. Jij krijgt een maand aan plaatsklare reels en foto’s die nieuwe klanten binnenbrengen. Jij runt je zaak, wij regelen je socials.',
   ctaPrimair: 'Plan een kennismaking',
   ctaSecundair: 'Bekijk pakketten',
+  ctaNoot: 'Gratis kennismakingsshoot · nog 5 plekken',
 };
 
+/*
+ * Bronnen van de cijfers (niet op de site getoond, wel paraat als iemand vraagt):
+ * - 8,2 mln: Newcom, Nationale Social Media Onderzoek 2025
+ *   https://www.newcom.nl/nationale-sociale-media-onderzoek/
+ * - 58%: Sprout Social, Social Media Statistics
+ *   https://sproutsocial.com/insights/social-media-statistics/
+ * - 74%: Tablein, Restaurant Social Media Marketing Statistics
+ *   https://www.tablein.com/blog/restaurant-social-media-marketing-statistics
+ * - 93%: Simply Measured-survey via PR Newswire
+ *   https://www.prnewswire.com/news-releases/93-of-small-businesses-struggle-with-common-social-media-challenges-301238532.html
+ * - Hoogste ROI van korte video: HubSpot, Video Marketing Statistics
+ *   https://blog.hubspot.com/marketing/video-marketing-statistics
+ */
 export const cijfers = {
   label: 'De kans',
   kop: 'Jouw klanten zitten al op social media.',
   intro:
     'Ze scrollen, zoeken en beslissen daar, elke dag. De enige vraag is wat ze vinden als jouw zaak voorbijkomt.',
   stats: [
-    {
-      getal: '8,2 mln',
-      tekst: 'Nederlanders gebruiken Instagram',
-      bron: 'Newcom, Nationale Social Media Onderzoek 2025',
-      bronUrl: 'https://www.newcom.nl/nationale-sociale-media-onderzoek/',
-    },
-    {
-      getal: '58%',
-      tekst: 'van consumenten ontdekt nieuwe bedrijven via social media',
-      bron: 'Sprout Social',
-      bronUrl: 'https://sproutsocial.com/insights/social-media-statistics/',
-    },
-    {
-      getal: '74%',
-      tekst: 'van gasten beslist via social media waar ze gaan eten',
-      bron: 'Tablein',
-      bronUrl: 'https://www.tablein.com/blog/restaurant-social-media-marketing-statistics',
-    },
-    {
-      getal: '93%',
-      tekst: 'van kleine ondernemers komt er zelf niet goed aan toe',
-      bron: 'Simply Measured',
-      bronUrl: 'https://www.prnewswire.com/news-releases/93-of-small-businesses-struggle-with-common-social-media-challenges-301238532.html',
-    },
+    { getal: '8,2 mln', tekst: 'Nederlanders gebruiken Instagram' },
+    { getal: '58%', tekst: 'van consumenten ontdekt nieuwe bedrijven via social media' },
+    { getal: '74%', tekst: 'van gasten beslist via social media waar ze gaan eten' },
+    { getal: '93%', tekst: 'van kleine ondernemers komt er zelf niet goed aan toe' },
   ],
   slot: 'Korte video’s, precies wat wij maken, zijn volgens marketeers hét contentformat met de hoogste ROI. Het enige dat jij nodig hebt, is een team dat ze elke maand voor je maakt.',
-  slotBron: 'HubSpot',
-  slotBronUrl: 'https://blog.hubspot.com/marketing/video-marketing-statistics',
 };
 
 export const voorWie = {
@@ -114,8 +106,14 @@ export const foundingLocals = {
   label: 'Nog 5 plekken',
   kop: 'Founding Locals',
   intro: 'Alleen voor de eerste 5 lokale bedrijven:',
-  tekst:
-    'Je start met een gratis kennismakingsshoot: één ochtend, 4 plaatsklare reels. Zo zie je de kwaliteit voordat je iets uitgeeft. Bevalt het? Dan krijg je 3 maanden pakket Shoot of Ontzorgd met 30% launch-korting, plus de kickoff- & strategiesessie (t.w.v. €150) cadeau. In ruil mogen wij de content in ons portfolio gebruiken en geef je een korte videotestimonial en review.',
+  // Value stack: eerst zien wat je krijgt, dan pas wat het kost.
+  stack: [
+    { wat: 'Gratis kennismakingsshoot: één ochtend, 4 plaatsklare reels', waarde: 't.w.v. €425' },
+    { wat: 'Kickoff- & strategiesessie met kanaaloptimalisatie cadeau', waarde: 't.w.v. €150' },
+    { wat: '30% korting op 3 maanden pakket Shoot of Ontzorgd', waarde: 'tot €715 voordeel' },
+  ],
+  ruil: 'Wat wij ervoor terugvragen: we mogen de content in ons portfolio gebruiken en je geeft een korte videotestimonial en review.',
+  risico: 'Eerst zien, dan beslissen. De kennismakingsshoot kost je niets en je zit nergens aan vast.',
   bonus:
     'Breng een ondernemer aan en jullie krijgen allebei een maand 20% korting.',
   cta: 'Claim jouw gratis kennismakingsshoot',
@@ -125,30 +123,52 @@ export const pakketten = {
   label: 'Pakketten',
   kop: 'Drie manieren om het uit handen te geven.',
   voorwaarden: 'Alle prijzen excl. btw · maandelijks opzegbaar na de eerste 3 maanden',
+  zekerheid: 'Niets gaat online zonder jouw akkoord.',
   items: [
     {
       naam: 'Plaatsen',
       prijs: '€225',
       periode: 'p/m',
       populair: false,
-      tekst:
-        'Jij levert de content aan, wij regelen de rest: captions schrijven, hashtags, inplannen en plaatsen op je kanalen in een vast ritme. Ongeveer 12 tot 16 posts per maand, op 1 of 2 platforms. Consistentie zonder dat jij eraan hoeft te denken.',
+      voorWie: 'Voor wie al content heeft, maar geen tijd om te posten.',
+      punten: [
+        '12 tot 16 posts per maand, ingepland en geplaatst',
+        'Captions en hashtags geschreven in jouw stijl',
+        'Op 1 of 2 platforms naar keuze',
+        'Vast ritme, zonder dat jij eraan hoeft te denken',
+      ],
+      noot: '',
+      cta: 'Vraag Plaatsen aan',
     },
     {
       naam: 'Shoot',
       prijs: '€495',
       periode: 'p/m',
       populair: true,
-      tekst:
-        'Eén ochtend per maand komen we bij je langs en shooten we op locatie. Je krijgt 6 tot 8 plaatsklare reels én een set foto’s, met ondertiteling en in de juiste formaten voor elk platform. Jij plaatst ze zelf, wanneer het jou uitkomt.',
+      voorWie: 'Voor wie elke maand verse, professionele content wil.',
+      punten: [
+        'Elke maand een shoot-ochtend in jouw zaak',
+        '6 tot 8 plaatsklare reels én een set foto’s',
+        'Ondertiteld en in de juiste formaten per platform',
+        'Jij plaatst zelf, wanneer het jou uitkomt',
+      ],
+      noot: 'Omgerekend zo’n €70 per reel, fotoset inbegrepen.',
+      cta: 'Start met Shoot',
     },
     {
       naam: 'Ontzorgd',
       prijs: '€795',
       periode: 'p/m',
       populair: false,
-      tekst:
-        'Alles uit Shoot, én wij plaatsen alles op je kanalen én doen de community: reageren op comments en DM’s. Volledige ontzorging. Jij hoeft nergens meer naar om te kijken.',
+      voorWie: 'Voor wie er helemaal niet meer naar wil omkijken.',
+      punten: [
+        'Alles uit pakket Shoot',
+        'Wij plaatsen alles op je kanalen',
+        'Wij reageren op comments en DM’s',
+        'Jij keurt alleen nog goed',
+      ],
+      noot: '',
+      cta: 'Vraag Ontzorgd aan',
     },
   ],
 };

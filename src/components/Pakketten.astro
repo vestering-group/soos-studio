@@ -6,7 +6,9 @@ import { pakketten, losseDiensten } from '../content/site';
   <div class="max-w-6xl mx-auto">
     <p class="mono-label text-ash mb-6 reveal">{pakketten.label}</p>
     <h2 class="text-heading mb-4 reveal">{pakketten.kop}</h2>
-    <p class="mono-label text-ash mb-14 reveal">{pakketten.voorwaarden}</p>
+    <p class="mono-label text-ash mb-14 reveal">
+      {pakketten.voorwaarden} · {pakketten.zekerheid}
+    </p>
 
     <div class="grid md:grid-cols-3 gap-5">
       {
@@ -17,17 +19,26 @@ import { pakketten, losseDiensten } from '../content/site';
               pakket.populair ? 'border-ink border-2' : 'border-ink/15',
             ]}
           >
-            <div class="flex items-start justify-between mb-6">
+            <div class="flex items-start justify-between mb-4">
               <h3 class="text-body">{pakket.naam}</h3>
-              {pakket.populair && <span class="mono-label bg-ink text-pure-white rounded-sm px-2 py-1">Populair</span>}
+              {pakket.populair && <span class="mono-label bg-ink text-pure-white rounded-sm px-2 py-1">Meest gekozen</span>}
             </div>
-            <p class="text-heading mb-1">
+            <p class="text-body-sm text-ash mb-6">{pakket.voorWie}</p>
+            <p class="text-heading mb-6">
               {pakket.prijs}
               <span class="text-body-sm text-ash"> {pakket.periode}</span>
             </p>
-            <p class="text-body-sm text-ink/80 mt-6 mb-10 grow">{pakket.tekst}</p>
+            <ul class="flex flex-col gap-3 mb-6 grow">
+              {pakket.punten.map((punt) => (
+                <li class="flex items-baseline gap-3 text-body-sm text-ink/80">
+                  <span class="mono-label text-ink shrink-0">+</span>
+                  {punt}
+                </li>
+              ))}
+            </ul>
+            {pakket.noot && <p class="mono-label text-ash mb-6">{pakket.noot}</p>}
             <a href="#contact" class={pakket.populair ? 'btn-accent text-center' : 'btn-ghost text-center'}>
-              Vraag {pakket.naam} aan
+              {pakket.cta}
             </a>
           </article>
         ))

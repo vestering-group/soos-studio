@@ -2,17 +2,33 @@
 import { foundingLocals } from '../content/site';
 ---
 
-<!-- Blush-wash als highlight-achtergrond (toegestaan als soft emphasis; de knop blijft de enige accent-CTA elders) -->
+{/* Blush-wash als highlight-achtergrond; de knop blijft de enige accent-CTA elders */}
 <section id="founding-locals" class="px-6 py-24 md:py-32 bg-blush/40">
-  <div class="max-w-3xl mx-auto text-center reveal">
+  <div class="max-w-2xl mx-auto text-center reveal">
     <p class="mono-label text-ink mb-6">{foundingLocals.label}</p>
     <h2 class="text-heading mb-4">{foundingLocals.kop}</h2>
-    <p class="text-body mb-6">{foundingLocals.intro}</p>
-    <p class="text-body-sm mb-6">{foundingLocals.tekst}</p>
-    <p class="text-body-sm mb-10">
-      <strong class="font-normal underline underline-offset-4">Plus:</strong>
+    <p class="text-body mb-10">{foundingLocals.intro}</p>
+
+    {/* Value stack: wat je krijgt, met de waarde ernaast */}
+    <ul class="text-left bg-pure-white rounded-sm border border-ink/15 divide-y divide-ink/10 mb-8">
+      {
+        foundingLocals.stack.map((item) => (
+          <li class="flex items-baseline justify-between gap-4 px-6 py-4">
+            <span class="text-body-sm">{item.wat}</span>
+            <span class="mono-label text-ash shrink-0">{item.waarde}</span>
+          </li>
+        ))
+      }
+    </ul>
+
+    <p class="text-body-sm mb-4">{foundingLocals.ruil}</p>
+    <p class="text-body-sm mb-10">{foundingLocals.risico}</p>
+
+    <a href="#contact" class="btn-ghost bg-pure-white">{foundingLocals.cta}</a>
+
+    <p class="mono-label text-ash mt-8">
+      <strong class="font-normal text-ink">Plus:</strong>
       {foundingLocals.bonus}
     </p>
-    <a href="#contact" class="btn-ghost bg-pure-white">{foundingLocals.cta}</a>
   </div>
 </section>

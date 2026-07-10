@@ -14,24 +14,11 @@ import { cijfers } from '../content/site';
           <div class="reveal">
             <p class="text-heading">{stat.getal}</p>
             <p class="text-body-sm text-ink/80 mt-3">{stat.tekst}</p>
-            <a
-              href={stat.bronUrl}
-              target="_blank"
-              rel="noopener"
-              class="mono-label text-ash mt-4 inline-block hover:text-ink"
-            >
-              Bron: {stat.bron}
-            </a>
           </div>
         ))
       }
     </div>
 
-    <p class="text-body max-w-3xl mt-16 reveal">
-      {cijfers.slot}
-      <a href={cijfers.slotBronUrl} target="_blank" rel="noopener" class="mono-label text-ash hover:text-ink ml-2">
-        Bron: {cijfers.slotBron}
-      </a>
-    </p>
+    <p class="text-body max-w-3xl mt-16 reveal">{cijfers.slot}</p>
   </div>
 </section>

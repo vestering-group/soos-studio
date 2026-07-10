@@ -15,7 +15,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{site.naam} — foto’s & reels voor lokale bedrijven</title>
+    <title>{site.naam} · foto’s & reels voor lokale bedrijven</title>
     <meta name="description" content={site.beschrijving} />
     <link rel="canonical" href={canonical} />
     <link rel="icon" type="image/svg+xml" href={`${base}/favicon.svg`} />
@@ -24,7 +24,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="nl_NL" />
     <meta property="og:site_name" content={site.naam} />
-    <meta property="og:title" content={`${site.naam} — foto’s & reels voor lokale bedrijven`} />
+    <meta property="og:title" content={`${site.naam} · foto’s & reels voor lokale bedrijven`} />
     <meta property="og:description" content={site.beschrijving} />
     <meta property="og:url" content={canonical} />
     <meta name="twitter:card" content="summary" />

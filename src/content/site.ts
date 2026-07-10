@@ -1,13 +1,16 @@
 /**
  * Alle teksten, prijzen en instellingen van soos.studio staan in dit bestand.
  * Pas hier iets aan, push naar GitHub, en de site werkt zichzelf bij.
+ *
+ * Schrijfwijzer: wij-vorm (Isabella in de lead, haar team shoot en edit,
+ * Isabella is altijd het aanspreekpunt). Geen gedachtestreepjes gebruiken.
  */
 
 export const site = {
   naam: 'soos.studio',
   domein: 'https://soos.studio',
   beschrijving:
-    'soos.studio is de contentstudio van Isabella Koper. Reels en foto’s op locatie die lokale bedrijven nieuwe klanten opleveren — plaatsklaar, elke maand.',
+    'soos.studio is de contentstudio van Isabella Koper. Reels en foto’s op locatie die lokale bedrijven nieuwe klanten opleveren. Plaatsklaar, elke maand.',
 
   // In te vullen door Isabella:
   email: 'hallo@soos.studio', // TODO: definitief e-mailadres
@@ -22,12 +25,12 @@ export const site = {
 };
 
 export const hero = {
-  // De kop wordt gesplitst rond [foto] — daar komt de inline foto in de zin.
+  // De kop wordt gesplitst rond de inline foto.
   kopVoor: 'Content die jouw zaak laat zien',
-  kopFotoAlt: 'Isabella aan het werk op locatie',
+  kopFotoAlt: 'Sfeerbeeld uit een lokale zaak',
   kopNa: 'zoals ’ie écht is.',
   subkop:
-    'Ik ben Isabella. Eén ochtend per maand sta ik met mijn camera in jouw zaak — en jij krijgt een maand aan plaatsklare reels en foto’s die nieuwe klanten binnenbrengen. Jij runt je zaak, ik regel je socials.',
+    'Wij zijn soos.studio, de contentstudio van Isabella Koper. Eén ochtend per maand komen we shooten in jouw zaak en jij krijgt een maand aan plaatsklare reels en foto’s die nieuwe klanten binnenbrengen. Jij runt je zaak, wij regelen je socials.',
   ctaPrimair: 'Plan een kennismaking',
   ctaSecundair: 'Bekijk pakketten',
 };
@@ -36,7 +39,7 @@ export const cijfers = {
   label: 'De kans',
   kop: 'Jouw klanten zitten al op social media.',
   intro:
-    'Ze scrollen, zoeken en beslissen daar — élke dag. De enige vraag is wat ze vinden als jouw zaak voorbijkomt.',
+    'Ze scrollen, zoeken en beslissen daar, elke dag. De enige vraag is wat ze vinden als jouw zaak voorbijkomt.',
   stats: [
     {
       getal: '8,2 mln',
@@ -63,7 +66,7 @@ export const cijfers = {
       bronUrl: 'https://www.prnewswire.com/news-releases/93-of-small-businesses-struggle-with-common-social-media-challenges-301238532.html',
     },
   ],
-  slot: 'Korte video’s — precies wat Isabella maakt — zijn volgens marketeers hét contentformat met de hoogste ROI. Het enige dat jij nodig hebt, is iemand die ze elke maand voor je maakt.',
+  slot: 'Korte video’s, precies wat wij maken, zijn volgens marketeers hét contentformat met de hoogste ROI. Het enige dat jij nodig hebt, is een team dat ze elke maand voor je maakt.',
   slotBron: 'HubSpot',
   slotBronUrl: 'https://blog.hubspot.com/marketing/video-marketing-statistics',
 };
@@ -85,14 +88,14 @@ export const usps = {
   label: 'Waarom soos.studio',
   punten: [
     {
-      titel: 'Één vast gezicht',
+      titel: 'Eén vast gezicht',
       tekst:
-        'Isabella ként je zaak, je stijl en je klanten — en dat zie je terug in élke post. Persoonlijker dan een bureau, professioneler dan zelf doen.',
+        'Isabella is altijd je aanspreekpunt. Ze kent je zaak, je stijl en je klanten, en dat zie je terug in elke post. Persoonlijker dan een bureau, professioneler dan zelf doen.',
     },
     {
       titel: 'Geshoot in jouw zaak',
       tekst:
-        'Echte mensen, echt licht, échte sfeer. Content waarin jouw klanten zichzelf en hun buurt herkennen — daar stoppen ze voor met scrollen.',
+        'Echte mensen, echt licht, échte sfeer. Content waarin jouw klanten zichzelf en hun buurt herkennen. Daar stoppen ze voor met scrollen.',
     },
     {
       titel: 'Plaatsklaar, zonder gedoe',
@@ -102,7 +105,7 @@ export const usps = {
     {
       titel: 'Consistentie die verkoopt',
       tekst:
-        'Op social media wint wie er elke week staat. Isabella zorgt voor een vast ritme, dus jouw zaak blijft in beeld — ook als jij het druk hebt.',
+        'Op social media wint wie er elke week staat. Wij zorgen voor een vast ritme, dus jouw zaak blijft in beeld, ook als jij het druk hebt.',
     },
   ],
 };
@@ -112,7 +115,7 @@ export const foundingLocals = {
   kop: 'Founding Locals',
   intro: 'Alleen voor de eerste 5 lokale bedrijven:',
   tekst:
-    'Je start met een gratis kennismakingsshoot: één ochtend, 4 plaatsklare reels — zie de kwaliteit voordat je iets uitgeeft. Bevalt het? Dan krijg je 3 maanden pakket Shoot of Ontzorgd met 30% launch-korting, plus de kickoff- & strategiesessie (t.w.v. €150) cadeau. In ruil mag Isabella de content in haar portfolio gebruiken en geef je een korte videotestimonial en review.',
+    'Je start met een gratis kennismakingsshoot: één ochtend, 4 plaatsklare reels. Zo zie je de kwaliteit voordat je iets uitgeeft. Bevalt het? Dan krijg je 3 maanden pakket Shoot of Ontzorgd met 30% launch-korting, plus de kickoff- & strategiesessie (t.w.v. €150) cadeau. In ruil mogen wij de content in ons portfolio gebruiken en geef je een korte videotestimonial en review.',
   bonus:
     'Breng een ondernemer aan en jullie krijgen allebei een maand 20% korting.',
   cta: 'Claim jouw gratis kennismakingsshoot',
@@ -129,7 +132,7 @@ export const pakketten = {
       periode: 'p/m',
       populair: false,
       tekst:
-        'Jij levert de content aan, Isabella regelt de rest: captions schrijven, hashtags, inplannen en plaatsen op je kanalen in een vast ritme. Ongeveer 12–16 posts per maand, 1–2 platforms. Consistentie zonder dat jij eraan hoeft te denken.',
+        'Jij levert de content aan, wij regelen de rest: captions schrijven, hashtags, inplannen en plaatsen op je kanalen in een vast ritme. Ongeveer 12 tot 16 posts per maand, op 1 of 2 platforms. Consistentie zonder dat jij eraan hoeft te denken.',
     },
     {
       naam: 'Shoot',
@@ -137,7 +140,7 @@ export const pakketten = {
       periode: 'p/m',
       populair: true,
       tekst:
-        'Eén ochtend per maand komt Isabella bij je langs en shoot op locatie. Je krijgt 6–8 plaatsklare reels én een set foto’s, met ondertiteling en in de juiste formaten voor elk platform. Jij plaatst ze zelf, wanneer het jou uitkomt.',
+        'Eén ochtend per maand komen we bij je langs en shooten we op locatie. Je krijgt 6 tot 8 plaatsklare reels én een set foto’s, met ondertiteling en in de juiste formaten voor elk platform. Jij plaatst ze zelf, wanneer het jou uitkomt.',
     },
     {
       naam: 'Ontzorgd',
@@ -145,7 +148,7 @@ export const pakketten = {
       periode: 'p/m',
       populair: false,
       tekst:
-        'Alles uit Shoot, én Isabella plaatst alles op je kanalen én doet de community: reageren op comments en DM’s. Volledige ontzorging — jij hoeft nergens meer naar om te kijken.',
+        'Alles uit Shoot, én wij plaatsen alles op je kanalen én doen de community: reageren op comments en DM’s. Volledige ontzorging. Jij hoeft nergens meer naar om te kijken.',
     },
   ],
 };
@@ -157,7 +160,7 @@ export const losseDiensten = {
     { naam: 'UGC-video’s op aanvraag', prijs: '1 video €150 · 3 video’s €395 · 5 video’s €595' },
     { naam: 'Losse bedrijfsfotografie op locatie', prijs: 'dagdeel €425 · hele dag €695' },
     { naam: 'Extra reel bovenop een pakket', prijs: '€85 per reel' },
-    { naam: 'Community management bij pakket Shoot', prijs: '€125 p/m' },
+    { naam: 'Communitymanagement bij pakket Shoot', prijs: '€125 p/m' },
     { naam: 'Kickoff- & strategiesessie met kanaaloptimalisatie', prijs: 'eenmalig €150 · gratis bij Founding Locals' },
   ],
   voetnoot: 'Reiskosten €0,25/km buiten de eigen regio.',
@@ -168,11 +171,11 @@ export const werkwijze = {
   kop: 'Zo gaat het in z’n werk.',
   stappen: [
     { titel: 'Kennismaken', tekst: 'We bespreken je bedrijf, je stijl en je doelen.' },
-    { titel: 'Plan & concept', tekst: 'Isabella bedenkt de content en een ritme dat bij je past.' },
-    { titel: 'Shooten op locatie', tekst: 'Eén ontspannen ochtend, jij runt je zaak, Isabella filmt en fotografeert.' },
+    { titel: 'Plan & concept', tekst: 'We bedenken de content en een ritme dat bij je past.' },
+    { titel: 'Shooten op locatie', tekst: 'Eén ontspannen ochtend. Jij runt je zaak, wij filmen en fotograferen.' },
     { titel: 'Monteren', tekst: 'Pakkende, plaatsklare reels en foto’s, in de juiste formaten.' },
     { titel: 'Jij keurt goed', tekst: 'Niets gaat online zonder jouw akkoord.' },
-    { titel: 'Plaatsen & reageren', tekst: 'Jij plaatst zelf, of Isabella doet het én beheert de reacties. Jij bepaalt.' },
+    { titel: 'Plaatsen & reageren', tekst: 'Jij plaatst zelf, of wij doen het én beheren de reacties. Jij bepaalt.' },
   ],
 };
 
@@ -195,13 +198,13 @@ export const portfolio = {
 };
 
 export const overIsabella = {
-  label: 'Over Isabella',
-  kop: 'Eén gezicht achter je content.',
+  label: 'Over ons',
+  kop: 'Isabella in de lead, een vast team erachter.',
   fotoAlt: 'Portret van Isabella Koper',
   tekst: [
-    'soos.studio is de studio van Isabella Koper. Ze werkt alleen — bewust. Zo weet je precies wie er in je zaak staat, wie je appt en wie je content maakt.',
-    'Isabella heeft ruime ervaring op Instagram, TikTok, Facebook en Pinterest en shoot met haar eigen camera, dus je krijgt professionele foto’s én reels uit één hand.',
-    'Ze werkt lokaal en komt gewoon bij je langs. Want de beste content ontstaat niet in een studio, maar op de plek waar jouw klanten al van houden.',
+    'soos.studio is de contentstudio van Isabella Koper. Isabella is altijd je aanspreekpunt: zij kent je zaak, bewaakt de stijl en staat zelf achter de camera. Voor het shooten en editen brengt ze haar vaste team mee.',
+    'We hebben ruime ervaring op Instagram, TikTok, Facebook en Pinterest en shooten met professionele camera’s. Zo krijg je foto’s én reels uit één hand, in een stijl die herkenbaar blijft.',
+    'We werken lokaal en komen gewoon bij je langs. Want de beste content ontstaat niet in een studio, maar op de plek waar jouw klanten al van houden.',
   ],
 };
 
@@ -210,9 +213,9 @@ export const faq = {
   kop: 'Veelgestelde vragen.',
   items: [
     {
-      vraag: 'Garandeer je views of volgers?',
+      vraag: 'Garanderen jullie views of volgers?',
       antwoord:
-        'Niemand kan specifieke aantallen garanderen — wees voorzichtig met wie dat wél belooft. Wat ik garandeer: elke maand professionele, plaatsklare content en een consistent ritme op je kanalen. Dat is precies wat op social media het verschil maakt tussen onzichtbaar zijn en gevonden worden.',
+        'Niemand kan specifieke aantallen garanderen, dus wees voorzichtig met wie dat wél belooft. Wat wij garanderen: elke maand professionele, plaatsklare content en een consistent ritme op je kanalen. Dat is precies wat op social media het verschil maakt tussen onzichtbaar zijn en gevonden worden.',
     },
     {
       vraag: 'Kan ik maandelijks opzeggen?',
@@ -220,19 +223,19 @@ export const faq = {
         'Ja, na de eerste 3 maanden zijn alle pakketten maandelijks opzegbaar. Die eerste periode is nodig om ritme en herkenbaarheid op te bouwen.',
     },
     {
-      vraag: 'Op welke platforms werk je?',
+      vraag: 'Op welke platforms werken jullie?',
       antwoord:
-        'Instagram, TikTok, Facebook en Pinterest. Alle content wordt geleverd in de juiste formaten per platform, inclusief ondertiteling bij reels.',
+        'Instagram, TikTok, Facebook en Pinterest. Alle content leveren we in de juiste formaten per platform, inclusief ondertiteling bij reels.',
     },
     {
-      vraag: 'Rekent je reiskosten?',
+      vraag: 'Rekenen jullie reiskosten?',
       antwoord:
-        'Binnen de eigen regio niet. Daarbuiten €0,25 per kilometer.',
+        'Binnen de eigen regio niet. Daarbuiten rekenen we €0,25 per kilometer.',
     },
     {
       vraag: 'Wat als ik de content niet goed vind?',
       antwoord:
-        'Niets gaat online zonder jouw akkoord. Je keurt alles eerst goed — dat is een vaste stap in de werkwijze.',
+        'Niets gaat online zonder jouw akkoord. Je keurt alles eerst goed, dat is een vaste stap in onze werkwijze.',
     },
   ],
 };
@@ -241,7 +244,7 @@ export const contact = {
   label: 'Contact',
   kop: 'Zullen we kennismaken?',
   tekst:
-    'Vertel kort iets over je zaak, dan hoor je binnen twee werkdagen van Isabella. Vrijblijvend — één kop koffie en je weet of het klikt. En wie weet sta jij volgende maand als eerste Founding Local online.',
+    'Vertel kort iets over je zaak, dan hoor je binnen twee werkdagen van Isabella. Vrijblijvend: één kop koffie en je weet of het klikt. En wie weet sta jij volgende maand als eerste Founding Local online.',
   typeBedrijfOpties: [
     'Horeca (café, lunchroom, restaurant)',
     'Kapper / beauty / nagelstudio',

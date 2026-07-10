@@ -1,6 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 600" width="480" height="600">
-  <rect width="480" height="600" fill="#e9e7e2"/>
-  <rect x="1" y="1" width="478" height="598" fill="none" stroke="#82868e" stroke-width="2" stroke-dasharray="8 8"/>
-  <text x="240" y="288" text-anchor="middle" font-family="'DM Mono', monospace" font-size="16" letter-spacing="0.5" fill="#82868e">FOTO 1</text>
-  <text x="240" y="314" text-anchor="middle" font-family="'DM Mono', monospace" font-size="12" letter-spacing="0.5" fill="#82868e">4:5 · PLACEHOLDER</text>
-</svg>

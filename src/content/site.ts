@@ -145,15 +145,16 @@ export const portfolio = {
   kop: 'Recent werk.',
   tekst:
     'Hier komt binnenkort werk van de eerste Founding Locals. Jouw zaak hier ook?',
-  // Vervang de placeholders in /public/portfolio/ door echte reels en foto's,
-  // met dezelfde bestandsnamen (of pas de lijst hieronder aan).
+  // Tijdelijke mockup-beelden (Unsplash, vrij te gebruiken). Vervang ze in
+  // /public/portfolio/ door echte reels en foto's met dezelfde bestandsnamen,
+  // of pas de lijst hieronder aan.
   items: [
-    { src: 'portfolio/reel-placeholder-1.svg', alt: 'Reel-placeholder 1', type: 'reel' },
-    { src: 'portfolio/foto-placeholder-1.svg', alt: 'Foto-placeholder 1', type: 'foto' },
-    { src: 'portfolio/reel-placeholder-2.svg', alt: 'Reel-placeholder 2', type: 'reel' },
-    { src: 'portfolio/reel-placeholder-3.svg', alt: 'Reel-placeholder 3', type: 'reel' },
-    { src: 'portfolio/foto-placeholder-2.svg', alt: 'Foto-placeholder 2', type: 'foto' },
-    { src: 'portfolio/reel-placeholder-4.svg', alt: 'Reel-placeholder 4', type: 'reel' },
+    { src: 'portfolio/reel-placeholder-1.jpg', alt: 'Reel: gerecht in een restaurant', type: 'reel' },
+    { src: 'portfolio/foto-placeholder-1.jpg', alt: 'Foto: interieur van een lunchroom', type: 'foto' },
+    { src: 'portfolio/reel-placeholder-2.jpg', alt: 'Reel: koffie proosten in een café', type: 'reel' },
+    { src: 'portfolio/reel-placeholder-3.jpg', alt: 'Reel: nagelstudio aan het werk', type: 'reel' },
+    { src: 'portfolio/foto-placeholder-2.jpg', alt: 'Foto: interieur van een boetiek', type: 'foto' },
+    { src: 'portfolio/reel-placeholder-4.jpg', alt: 'Reel: yoga bij zonsondergang', type: 'reel' },
   ],
 };
 

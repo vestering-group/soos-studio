@@ -5,13 +5,16 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
 // Beeldpool: klikken op een clusterfoto wisselt naar de volgende uit deze lijst.
 const pool = [
-  'portfolio/reel-placeholder-1.svg',
-  'portfolio/foto-placeholder-1.svg',
-  'portfolio/reel-placeholder-2.svg',
-  'portfolio/foto-placeholder-2.svg',
-  'portfolio/reel-placeholder-3.svg',
-  'portfolio/reel-placeholder-4.svg',
-  'isabella-portret.svg',
+  'portfolio/reel-placeholder-1.jpg',
+  'portfolio/foto-placeholder-1.jpg',
+  'portfolio/reel-placeholder-2.jpg',
+  'portfolio/foto-placeholder-2.jpg',
+  'portfolio/reel-placeholder-3.jpg',
+  'portfolio/reel-placeholder-4.jpg',
+  'portfolio/mockup-restaurant.jpg',
+  'portfolio/mockup-bakker.jpg',
+  'portfolio/mockup-kapper.jpg',
+  'portfolio/mockup-food.jpg',
 ].map((p) => `${base}/${p}`);
 
 // Rechtercluster: overlappende stapel foto's naast de kop (Telescope-blob).
@@ -78,7 +81,7 @@ const clusterLinks = [
     <h1 class="text-heading-lg intro" style="--d: 0.25s">
       {hero.kopVoor}
       <img
-        src={`${base}/isabella-portret.svg`}
+        src={`${base}/isabella-portret.jpg`}
         alt={hero.kopFotoAlt}
         class="inline-photo inline-block h-[0.95em] w-auto rounded-sm align-baseline mx-1"
         style="--d: 0.8s"

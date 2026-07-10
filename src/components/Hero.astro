@@ -3,32 +3,75 @@ import { hero } from '../content/site';
 
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
-// Zwevende editorial foto's rond de kop: positie, rotatie, entrance-delay
-// en parallax-snelheid per foto (wrapper krijgt parallax, img de entrance).
-const fotos = [
-  { src: 'portfolio/reel-placeholder-1.svg', pos: 'top-[12%] left-[8%] w-28 lg:w-36 hidden md:block', rot: '-3deg', d: '0.9s', parallax: 0.08 },
-  { src: 'portfolio/foto-placeholder-1.svg', pos: 'top-[18%] right-[7%] w-32 lg:w-40 hidden md:block', rot: '2deg', d: '1.05s', parallax: 0.05 },
-  { src: 'portfolio/reel-placeholder-2.svg', pos: 'bottom-[20%] left-[14%] w-24 hidden lg:block', rot: '1deg', d: '1.2s', parallax: 0.12 },
-  { src: 'portfolio/foto-placeholder-2.svg', pos: 'bottom-[14%] right-[12%] w-28 hidden lg:block', rot: '-2deg', d: '1.35s', parallax: 0.07 },
+// Beeldpool: klikken op een clusterfoto wisselt naar de volgende uit deze lijst.
+const pool = [
+  'portfolio/reel-placeholder-1.svg',
+  'portfolio/foto-placeholder-1.svg',
+  'portfolio/reel-placeholder-2.svg',
+  'portfolio/foto-placeholder-2.svg',
+  'portfolio/reel-placeholder-3.svg',
+  'portfolio/reel-placeholder-4.svg',
+  'isabella-portret.svg',
+].map((p) => `${base}/${p}`);
+
+// Rechtercluster: overlappende stapel foto's naast de kop (Telescope-blob).
+// depth = hoe sterk de foto met de muis meebeweegt; fdur/fd = float-tempo.
+const clusterRechts = [
+  { idx: 1, w: 'w-40 lg:w-52', left: '18%', top: '22%', rot: '-2deg', d: '0.9s', depth: 1, fdur: '7s', fd: '0s', fx: '5px', fy: '-9px', fr: '1.2deg', z: 30 },
+  { idx: 0, w: 'w-24 lg:w-28', left: '52%', top: '2%', rot: '2deg', d: '1.05s', depth: 1.6, fdur: '9s', fd: '-2s', fx: '-6px', fy: '-7px', fr: '-1.5deg', z: 20 },
+  { idx: 3, w: 'w-28 lg:w-36', left: '0%', top: '48%', rot: '3deg', d: '1.2s', depth: 0.7, fdur: '8s', fd: '-4s', fx: '4px', fy: '-11px', fr: '1deg', z: 40 },
+  { idx: 4, w: 'w-20 lg:w-24', left: '58%', top: '58%', rot: '-3deg', d: '1.35s', depth: 1.9, fdur: '6s', fd: '-1s', fx: '-4px', fy: '-8px', fr: '-1deg', z: 10 },
+];
+
+// Linkercluster: kleiner tegenwicht (alleen op brede schermen).
+const clusterLinks = [
+  { idx: 5, w: 'w-24 lg:w-28', left: '30%', top: '10%', rot: '2deg', d: '1.15s', depth: 1.4, fdur: '8.5s', fd: '-3s', fx: '5px', fy: '-8px', fr: '1.4deg', z: 20 },
+  { idx: 2, w: 'w-28 lg:w-32', left: '0%', top: '42%', rot: '-2deg', d: '1.3s', depth: 0.9, fdur: '7.5s', fd: '-5s', fx: '-5px', fy: '-10px', fr: '-1.2deg', z: 30 },
 ];
 ---
 
 <header id="top" class="relative min-h-[92vh] flex items-center justify-center overflow-hidden px-6">
-  {
-    fotos.map((foto) => (
-      <div class:list={['absolute', foto.pos]} data-parallax={foto.parallax}>
-        <img
-          src={`${base}/${foto.src}`}
-          alt=""
-          aria-hidden="true"
-          class="hero-photo-img w-full rounded-sm"
-          style={`--rot: ${foto.rot}; --d: ${foto.d}`}
-        />
-      </div>
-    ))
-  }
+  <!-- Rechtercluster -->
+  <div class="hidden md:block absolute right-[2%] lg:right-[4%] top-1/2 -translate-y-1/2 w-64 lg:w-80 h-[380px] lg:h-[460px]" aria-hidden="true">
+    {
+      clusterRechts.map((f) => (
+        <div class:list={['cluster-item absolute', f.w]} style={`left:${f.left}; top:${f.top}; --depth:${f.depth}; z-index:${f.z}`}>
+          <div class="floaty" style={`--fdur:${f.fdur}; --fd:${f.fd}; --float-x:${f.fx}; --float-y:${f.fy}; --float-r:${f.fr}`}>
+            <img
+              src={pool[f.idx]}
+              alt=""
+              data-cycle
+              data-idx={f.idx}
+              class="hero-photo-img w-full rounded-sm cursor-pointer"
+              style={`--rot:${f.rot}; --d:${f.d}`}
+            />
+          </div>
+        </div>
+      ))
+    }
+  </div>
 
-  <div class="max-w-4xl text-center">
+  <!-- Linkercluster -->
+  <div class="hidden lg:block absolute left-[4%] top-[28%] w-52 h-72" aria-hidden="true">
+    {
+      clusterLinks.map((f) => (
+        <div class:list={['cluster-item absolute', f.w]} style={`left:${f.left}; top:${f.top}; --depth:${f.depth}; z-index:${f.z}`}>
+          <div class="floaty" style={`--fdur:${f.fdur}; --fd:${f.fd}; --float-x:${f.fx}; --float-y:${f.fy}; --float-r:${f.fr}`}>
+            <img
+              src={pool[f.idx]}
+              alt=""
+              data-cycle
+              data-idx={f.idx}
+              class="hero-photo-img w-full rounded-sm cursor-pointer"
+              style={`--rot:${f.rot}; --d:${f.d}`}
+            />
+          </div>
+        </div>
+      ))
+    }
+  </div>
+
+  <div class="max-w-3xl text-center relative z-40">
     <p class="mono-label text-ash mb-8 intro" style="--d: 0.1s">Contentstudio voor lokale bedrijven</p>
 
     <!-- Signatuurpatroon: foto inline in de kop, op de tekstbaseline -->
@@ -54,7 +97,7 @@ const fotos = [
   <!-- Scroll-indicator rechtsonder -->
   <a
     href="#voor-wie"
-    class="mono-label absolute bottom-6 right-6 hidden sm:flex items-center gap-2 intro"
+    class="mono-label absolute bottom-6 right-6 hidden sm:flex items-center gap-2 intro z-40"
     style="--d: 1.5s"
     aria-label="Scroll naar beneden"
   >
@@ -64,3 +107,45 @@ const fotos = [
     </svg>
   </a>
 </header>
+
+<script define:vars={{ pool }}>
+  const header = document.getElementById('top');
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // Muis-parallax: de clusters bewegen zacht en vertraagd mee met de cursor.
+  if (header && !reduced) {
+    let tx = 0, ty = 0, cx = 0, cy = 0, raf = null;
+    const tick = () => {
+      cx += (tx - cx) * 0.06;
+      cy += (ty - cy) * 0.06;
+      header.style.setProperty('--mx', cx.toFixed(4));
+      header.style.setProperty('--my', cy.toFixed(4));
+      if (Math.abs(tx - cx) > 0.002 || Math.abs(ty - cy) > 0.002) {
+        raf = requestAnimationFrame(tick);
+      } else {
+        raf = null;
+      }
+    };
+    window.addEventListener(
+      'mousemove',
+      (e) => {
+        tx = (e.clientX / window.innerWidth - 0.5) * 2;
+        ty = (e.clientY / window.innerHeight - 0.5) * 2;
+        if (!raf) raf = requestAnimationFrame(tick);
+      },
+      { passive: true }
+    );
+  }
+
+  // Klik op een clusterfoto = volgende foto uit de pool, met een kleine pop.
+  document.querySelectorAll('img[data-cycle]').forEach((img) => {
+    img.addEventListener('click', () => {
+      const next = (parseInt(img.dataset.idx, 10) + 1) % pool.length;
+      img.dataset.idx = String(next);
+      img.src = pool[next];
+      img.classList.remove('pop');
+      void img.offsetWidth;
+      img.classList.add('pop');
+    });
+  });
+</script>

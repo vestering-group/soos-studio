@@ -41,8 +41,6 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
     <BottomBar />
 
     <script>
-      const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
       // Reveal op scroll met stagger: elementen die tegelijk in beeld komen
       // verschijnen kort na elkaar — geen libraries.
       const observer = new IntersectionObserver(
@@ -58,29 +56,6 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
         { threshold: 0.12 }
       );
       document.querySelectorAll('.reveal, .reveal-img').forEach((el) => observer.observe(el));
-
-      // Zachte parallax op de zwevende herofoto's.
-      const parallaxEls = [...document.querySelectorAll<HTMLElement>('[data-parallax]')];
-      if (!reducedMotion && parallaxEls.length) {
-        let ticking = false;
-        const update = () => {
-          for (const el of parallaxEls) {
-            const speed = parseFloat(el.dataset.parallax ?? '0');
-            el.style.transform = `translateY(${-window.scrollY * speed}px)`;
-          }
-          ticking = false;
-        };
-        window.addEventListener(
-          'scroll',
-          () => {
-            if (!ticking) {
-              ticking = true;
-              requestAnimationFrame(update);
-            }
-          },
-          { passive: true }
-        );
-      }
     </script>
   </body>
 </html>

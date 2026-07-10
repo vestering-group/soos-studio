@@ -1,11 +1,21 @@
 ---
 import { site, footer } from '../content/site';
 
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const jaar = new Date().getFullYear();
+
+// Beeldpool voor de wisselende "o" in het grote wordmark.
+const oPool = [
+  'portfolio/foto-placeholder-1.svg',
+  'portfolio/reel-placeholder-1.svg',
+  'portfolio/foto-placeholder-2.svg',
+  'portfolio/reel-placeholder-3.svg',
+  'isabella-portret.svg',
+].map((p) => `${base}/${p}`);
 ---
 
-<footer class="px-6 pt-16 pb-24 border-t-2 border-ink">
-  <div class="max-w-5xl mx-auto">
+<footer class="pt-16 pb-24 border-t-2 border-ink overflow-hidden">
+  <div class="max-w-5xl mx-auto px-6">
     <p class="text-body max-w-2xl mb-12">{footer.belofte}</p>
     <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-8">
       <div class="flex flex-col gap-2">
@@ -25,4 +35,39 @@ const jaar = new Date().getFullYear();
       </div>
     </div>
   </div>
+
+  <!-- Groot wordmark als afsluiter — de "o" wisselt steeds van beeld -->
+  <div class="mt-24 text-center select-none" aria-hidden="true">
+    <p class="wordmark">s<img id="wordmark-o" src={oPool[0]} alt="" data-idx="0" />os.studio</p>
+  </div>
 </footer>
+
+<script define:vars={{ oPool }}>
+  const o = document.getElementById('wordmark-o');
+  if (o) {
+    const wissel = () => {
+      const next = (parseInt(o.dataset.idx, 10) + 1) % oPool.length;
+      o.dataset.idx = String(next);
+      o.src = oPool[next];
+      o.classList.remove('pop');
+      void o.offsetWidth;
+      o.classList.add('pop');
+    };
+
+    // Wissel automatisch zolang het wordmark in beeld is; klikken kan ook.
+    let timer = null;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !timer) {
+          timer = setInterval(wissel, 1400);
+        } else if (!entry.isIntersecting && timer) {
+          clearInterval(timer);
+          timer = null;
+        }
+      },
+      { threshold: 0.3 }
+    );
+    observer.observe(o);
+    o.addEventListener('click', wissel);
+  }
+</script>

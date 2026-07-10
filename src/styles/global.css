@@ -134,6 +134,62 @@ body {
   animation-delay: var(--d, 0s);
 }
 
+/* Fotocluster: elk item beweegt mee met de muis (--mx/--my worden door
+   JS op de hero gezet; --depth bepaalt hoe sterk per foto) */
+.cluster-item {
+  transform: translate3d(
+    calc(var(--mx, 0) * var(--depth, 1) * 26px),
+    calc(var(--my, 0) * var(--depth, 1) * 26px),
+    0
+  );
+  will-change: transform;
+}
+
+/* Continue float: elke foto deint traag met eigen richting en tempo */
+@keyframes floaty {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+  }
+  50% {
+    transform: translate3d(var(--float-x, 4px), var(--float-y, -9px), 0)
+      rotate(var(--float-r, 1deg));
+  }
+}
+.floaty {
+  animation: floaty var(--fdur, 7s) ease-in-out var(--fd, 0s) infinite;
+}
+
+/* Pop bij het wisselen van een foto (klik of interval) */
+@keyframes pop {
+  from {
+    transform: scale(0.8) rotate(var(--rot, 0deg));
+  }
+  to {
+    transform: scale(1) rotate(var(--rot, 0deg));
+  }
+}
+.pop {
+  animation: pop 0.45s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Groot wordmark onderaan: de "o" is een wisselend beeld */
+.wordmark {
+  font-family: var(--font-serif);
+  font-size: clamp(44px, 12.5vw, 220px);
+  line-height: 1;
+  letter-spacing: -0.02em;
+  white-space: nowrap;
+}
+.wordmark img {
+  display: inline-block;
+  height: 0.62em;
+  width: auto;
+  border-radius: 2px;
+  vertical-align: baseline;
+  cursor: pointer;
+}
+
 /* Inline foto in de kop: groeit in nadat de kop staat */
 @keyframes inline-photo-in {
   from {
@@ -206,8 +262,13 @@ body {
   .intro,
   .hero-photo-img,
   .inline-photo,
-  .bar-intro {
+  .bar-intro,
+  .floaty,
+  .pop {
     animation: none;
+  }
+  .cluster-item {
+    transform: none;
   }
   .reveal,
   .reveal-img {

@@ -7,7 +7,7 @@ export const site = {
   naam: 'soos.studio',
   domein: 'https://soos.studio',
   beschrijving:
-    'soos.studio is de contentstudio van Isabella Koper. Foto’s en reels op locatie voor lokale bedrijven — eerlijk, persoonlijk en plaatsklaar.',
+    'soos.studio is de contentstudio van Isabella Koper. Reels en foto’s op locatie die lokale bedrijven nieuwe klanten opleveren — plaatsklaar, elke maand.',
 
   // In te vullen door Isabella:
   email: 'hallo@soos.studio', // TODO: definitief e-mailadres
@@ -27,9 +27,45 @@ export const hero = {
   kopFotoAlt: 'Isabella aan het werk op locatie',
   kopNa: 'zoals ’ie écht is.',
   subkop:
-    'Ik ben Isabella. Ik maak foto’s en reels op locatie voor lokale bedrijven — en regel als je wilt ook het plaatsen. Geen loze beloftes over views of volgers, wél consistente, professionele content die klanten binnenhaalt.',
+    'Ik ben Isabella. Eén ochtend per maand sta ik met mijn camera in jouw zaak — en jij krijgt een maand aan plaatsklare reels en foto’s die nieuwe klanten binnenbrengen. Jij runt je zaak, ik regel je socials.',
   ctaPrimair: 'Plan een kennismaking',
   ctaSecundair: 'Bekijk pakketten',
+};
+
+export const cijfers = {
+  label: 'De kans',
+  kop: 'Jouw klanten zitten al op social media.',
+  intro:
+    'Ze scrollen, zoeken en beslissen daar — élke dag. De enige vraag is wat ze vinden als jouw zaak voorbijkomt.',
+  stats: [
+    {
+      getal: '8,2 mln',
+      tekst: 'Nederlanders gebruiken Instagram',
+      bron: 'Newcom, Nationale Social Media Onderzoek 2025',
+      bronUrl: 'https://www.newcom.nl/nationale-sociale-media-onderzoek/',
+    },
+    {
+      getal: '58%',
+      tekst: 'van consumenten ontdekt nieuwe bedrijven via social media',
+      bron: 'Sprout Social',
+      bronUrl: 'https://sproutsocial.com/insights/social-media-statistics/',
+    },
+    {
+      getal: '74%',
+      tekst: 'van gasten beslist via social media waar ze gaan eten',
+      bron: 'Tablein',
+      bronUrl: 'https://www.tablein.com/blog/restaurant-social-media-marketing-statistics',
+    },
+    {
+      getal: '93%',
+      tekst: 'van kleine ondernemers komt er zelf niet goed aan toe',
+      bron: 'Simply Measured',
+      bronUrl: 'https://www.prnewswire.com/news-releases/93-of-small-businesses-struggle-with-common-social-media-challenges-301238532.html',
+    },
+  ],
+  slot: 'Korte video’s — precies wat Isabella maakt — zijn volgens marketeers hét contentformat met de hoogste ROI. Het enige dat jij nodig hebt, is iemand die ze elke maand voor je maakt.',
+  slotBron: 'HubSpot',
+  slotBronUrl: 'https://blog.hubspot.com/marketing/video-marketing-statistics',
 };
 
 export const voorWie = {
@@ -51,12 +87,12 @@ export const usps = {
     {
       titel: 'Één vast gezicht',
       tekst:
-        'Geen bureau met wisselende gezichten. Isabella ként je zaak, je stijl en je klanten — en dat zie je terug in de content.',
+        'Isabella ként je zaak, je stijl en je klanten — en dat zie je terug in élke post. Persoonlijker dan een bureau, professioneler dan zelf doen.',
     },
     {
-      titel: 'Lokaal, komt langs',
+      titel: 'Geshoot in jouw zaak',
       tekst:
-        'Geshoot op jouw locatie, in jouw omgeving. Echte mensen, echt licht, echte sfeer — geen stockfoto’s.',
+        'Echte mensen, echt licht, échte sfeer. Content waarin jouw klanten zichzelf en hun buurt herkennen — daar stoppen ze voor met scrollen.',
     },
     {
       titel: 'Plaatsklaar, zonder gedoe',
@@ -64,9 +100,9 @@ export const usps = {
         'Reels met ondertiteling, in de juiste formaten voor Instagram, TikTok, Facebook en Pinterest. Jij hoeft er niets meer aan te doen.',
     },
     {
-      titel: 'Eerlijk over wat werkt',
+      titel: 'Consistentie die verkoopt',
       tekst:
-        'Geen garanties op views of volgers — die kan niemand waarmaken. Wel professionele content, consequent gemaakt en geplaatst.',
+        'Op social media wint wie er elke week staat. Isabella zorgt voor een vast ritme, dus jouw zaak blijft in beeld — ook als jij het druk hebt.',
     },
   ],
 };
@@ -74,12 +110,12 @@ export const usps = {
 export const foundingLocals = {
   label: 'Nog 5 plekken',
   kop: 'Founding Locals',
-  intro: 'Voor de eerste 5 lokale bedrijven:',
+  intro: 'Alleen voor de eerste 5 lokale bedrijven:',
   tekst:
-    'Start met een gratis kennismakingsshoot (één ochtend, 4 plaatsklare reels) — zo zie je de kwaliteit zonder risico. Daarna neem je 3 maanden pakket Shoot of Ontzorgd af met 30% launch-korting. In ruil mag Isabella de content in haar portfolio gebruiken en geef je een korte videotestimonial, een review en een vermelding. Zo help je een lokale ondernemer op weg én krijg je zelf topcontent voor een zachte prijs.',
+    'Je start met een gratis kennismakingsshoot: één ochtend, 4 plaatsklare reels — zie de kwaliteit voordat je iets uitgeeft. Bevalt het? Dan krijg je 3 maanden pakket Shoot of Ontzorgd met 30% launch-korting, plus de kickoff- & strategiesessie (t.w.v. €150) cadeau. In ruil mag Isabella de content in haar portfolio gebruiken en geef je een korte videotestimonial en review.',
   bonus:
     'Breng een ondernemer aan en jullie krijgen allebei een maand 20% korting.',
-  cta: 'Claim jouw kennismakingsshoot',
+  cta: 'Claim jouw gratis kennismakingsshoot',
 };
 
 export const pakketten = {
@@ -144,7 +180,7 @@ export const portfolio = {
   label: 'Werk',
   kop: 'Recent werk.',
   tekst:
-    'Hier komt binnenkort werk van de eerste Founding Locals. Jouw zaak hier ook?',
+    'Hier komt het werk van de eerste Founding Locals. Eén van deze plekken kan van jouw zaak zijn.',
   // Tijdelijke mockup-beelden (Unsplash, vrij te gebruiken). Vervang ze in
   // /public/portfolio/ door echte reels en foto's met dezelfde bestandsnamen,
   // of pas de lijst hieronder aan.
@@ -176,7 +212,7 @@ export const faq = {
     {
       vraag: 'Garandeer je views of volgers?',
       antwoord:
-        'Nee — en wees voorzichtig met wie dat wél belooft. Wat ik wel garandeer: consistente, professionele content die je bedrijf online op de kaart zet. Dat is wat op de lange termijn klanten binnenhaalt.',
+        'Niemand kan specifieke aantallen garanderen — wees voorzichtig met wie dat wél belooft. Wat ik garandeer: elke maand professionele, plaatsklare content en een consistent ritme op je kanalen. Dat is precies wat op social media het verschil maakt tussen onzichtbaar zijn en gevonden worden.',
     },
     {
       vraag: 'Kan ik maandelijks opzeggen?',
@@ -205,7 +241,7 @@ export const contact = {
   label: 'Contact',
   kop: 'Zullen we kennismaken?',
   tekst:
-    'Vertel kort iets over je zaak, dan neemt Isabella binnen twee werkdagen contact op. Vrijblijvend — een kop koffie is genoeg om te weten of het klikt.',
+    'Vertel kort iets over je zaak, dan hoor je binnen twee werkdagen van Isabella. Vrijblijvend — één kop koffie en je weet of het klikt. En wie weet sta jij volgende maand als eerste Founding Local online.',
   typeBedrijfOpties: [
     'Horeca (café, lunchroom, restaurant)',
     'Kapper / beauty / nagelstudio',
@@ -227,5 +263,5 @@ export const contact = {
 
 export const footer = {
   belofte:
-    'Geen loze beloftes over views of volgers — wél content die je zaak op de kaart zet.',
+    'Elke maand professionele, plaatsklare content die jouw zaak op de kaart zet.',
 };

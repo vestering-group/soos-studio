@@ -1,0 +1,37 @@
+---
+import { cijfers } from '../content/site';
+---
+
+<section id="cijfers" class="px-6 py-24 md:py-32 bg-pure-white border-y border-ink/10">
+  <div class="max-w-5xl mx-auto">
+    <p class="mono-label text-ash mb-6 reveal">{cijfers.label}</p>
+    <h2 class="text-heading mb-4 reveal">{cijfers.kop}</h2>
+    <p class="text-body-sm text-ink/80 max-w-2xl mb-16 reveal">{cijfers.intro}</p>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-12 border-t border-ink/20 pt-12">
+      {
+        cijfers.stats.map((stat) => (
+          <div class="reveal">
+            <p class="text-heading">{stat.getal}</p>
+            <p class="text-body-sm text-ink/80 mt-3">{stat.tekst}</p>
+            <a
+              href={stat.bronUrl}
+              target="_blank"
+              rel="noopener"
+              class="mono-label text-ash mt-4 inline-block hover:text-ink"
+            >
+              Bron: {stat.bron}
+            </a>
+          </div>
+        ))
+      }
+    </div>
+
+    <p class="text-body max-w-3xl mt-16 reveal">
+      {cijfers.slot}
+      <a href={cijfers.slotBronUrl} target="_blank" rel="noopener" class="mono-label text-ash hover:text-ink ml-2">
+        Bron: {cijfers.slotBron}
+      </a>
+    </p>
+  </div>
+</section>

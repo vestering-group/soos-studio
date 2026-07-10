@@ -4,6 +4,7 @@
   Designsysteem "Telescope" — editorial pasteboard op cream paper.
   Zie DESIGN.md. Beausite is commercieel; Instrument Serif is het
   vrij beschikbare substituut (zelfde single-weight 400 karakter).
+  De lime-accentkleur uit de referentie is vervangen door blush rosé.
 */
 @theme {
   /* Colors */
@@ -11,7 +12,7 @@
   --color-ink: #1a1915;
   --color-ash: #82868e;
   --color-pure-white: #ffffff;
-  --color-lime-pulse: #e3f794;
+  --color-blush: #f2c4ce;
 
   /* Typography */
   --font-serif: "Instrument Serif", Georgia, "Times New Roman", serif;
@@ -62,24 +63,24 @@ body {
   font-weight: 400;
 }
 
-/* De enige lime knop op de pagina — schaars houden */
-.btn-lime {
+/* De enige accentknop op de pagina — schaars houden */
+.btn-accent {
   font-family: var(--font-mono);
   font-size: 12px;
   letter-spacing: 0.36px;
   text-transform: uppercase;
-  background: var(--color-lime-pulse);
+  background: var(--color-blush);
   color: var(--color-ink);
   border-radius: 2px;
   padding: 10px 14px;
   display: inline-block;
   transition: filter 0.15s ease;
 }
-.btn-lime:hover {
-  filter: brightness(0.96);
+.btn-accent:hover {
+  filter: brightness(0.95);
 }
 
-/* Secundaire actie: tekst met onderstreping, nooit lime */
+/* Secundaire actie: omlijnd, nooit in de accentkleur */
 .btn-ghost {
   font-family: var(--font-mono);
   font-size: 12px;
@@ -96,21 +97,125 @@ body {
   background: var(--color-pure-white);
 }
 
-/* Subtiele reveal-on-scroll (geen libraries) */
+/* ---------------------------------------------------------------
+   Animaties — Telescope-gevoel: gefaseerde entrances, zachte easing
+   --------------------------------------------------------------- */
+
+/* Entrance bij paginalading: fade + rise, gefaseerd via --d */
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(26px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.intro {
+  animation: rise-in 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: var(--d, 0s);
+}
+
+/* Zwevende herofoto's: schalen zachtjes in, één voor één */
+@keyframes photo-in {
+  from {
+    opacity: 0;
+    transform: scale(0.7) rotate(var(--rot, 0deg)) translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) rotate(var(--rot, 0deg));
+  }
+}
+.hero-photo-img {
+  transform: rotate(var(--rot, 0deg));
+  animation: photo-in 1.1s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation-delay: var(--d, 0s);
+}
+
+/* Inline foto in de kop: groeit in nadat de kop staat */
+@keyframes inline-photo-in {
+  from {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+.inline-photo {
+  animation: inline-photo-in 0.7s cubic-bezier(0.34, 1.4, 0.64, 1) both;
+  animation-delay: var(--d, 0.5s);
+}
+
+/* Bottom-bar schuift bij lading omhoog het beeld in */
+@keyframes bar-in {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: none;
+  }
+}
+.bar-intro {
+  animation: bar-in 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.9s both;
+}
+
+/* Reveal-on-scroll: fade + rise, stagger via JS (transition-delay) */
 .reveal {
   opacity: 0;
-  transform: translateY(18px);
-  transition: opacity 0.7s ease, transform 0.7s ease;
+  transform: translateY(22px);
+  transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
 }
 .reveal.is-visible {
   opacity: 1;
   transform: none;
 }
+
+/* Beeld-reveal: zelfde, maar met subtiele schaal */
+.reveal-img {
+  opacity: 0;
+  transform: scale(0.96) translateY(14px);
+  transition: opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.reveal-img.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Portfolio-hover: heel licht inzoomen */
+.hover-zoom {
+  overflow: hidden;
+  border-radius: 2px;
+}
+.hover-zoom img {
+  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.hover-zoom:hover img {
+  transform: scale(1.035);
+}
+
 @media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
-  .reveal {
+  html {
+    scroll-behavior: auto;
+  }
+  .intro,
+  .hero-photo-img,
+  .inline-photo,
+  .bar-intro {
+    animation: none;
+  }
+  .reveal,
+  .reveal-img {
     opacity: 1;
     transform: none;
+    transition: none;
+  }
+  .hover-zoom img {
     transition: none;
   }
 }

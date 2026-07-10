@@ -47,12 +47,12 @@ const heeftFormulier = Boolean(site.formspreeEndpoint);
             <textarea name="bericht" rows="5" required class="bg-bone-paper border border-ink/20 rounded-sm px-4 py-3 text-body-sm focus:outline-none focus:border-ink" />
           </label>
           <div class="sm:col-span-2">
-            <button type="submit" class="btn-lime cursor-pointer">Verstuur aanvraag</button>
+            <button type="submit" class="btn-accent cursor-pointer">Verstuur aanvraag</button>
           </div>
         </form>
       ) : (
         <div class="reveal">
-          <a href={`mailto:${site.email}?subject=Kennismaking%20soos.studio`} class="btn-lime">
+          <a href={`mailto:${site.email}?subject=Kennismaking%20soos.studio`} class="btn-accent">
             Mail Isabella — {site.email}
           </a>
           <p class="mono-label text-ash mt-6">

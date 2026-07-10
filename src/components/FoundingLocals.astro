@@ -1,0 +1,18 @@
+---
+import { foundingLocals } from '../content/site';
+---
+
+<!-- Lime-wash als highlight-achtergrond (toegestaan als soft emphasis; de knop blijft de enige lime CTA elders) -->
+<section id="founding-locals" class="px-6 py-24 md:py-32 bg-lime-pulse/40">
+  <div class="max-w-3xl mx-auto text-center reveal">
+    <p class="mono-label text-ink mb-6">{foundingLocals.label}</p>
+    <h2 class="text-heading mb-4">{foundingLocals.kop}</h2>
+    <p class="text-body mb-6">{foundingLocals.intro}</p>
+    <p class="text-body-sm mb-6">{foundingLocals.tekst}</p>
+    <p class="text-body-sm mb-10">
+      <strong class="font-normal underline underline-offset-4">Plus:</strong>
+      {foundingLocals.bonus}
+    </p>
+    <a href="#contact" class="btn-ghost bg-pure-white">{foundingLocals.cta}</a>
+  </div>
+</section>

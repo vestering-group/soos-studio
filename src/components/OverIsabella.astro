@@ -1,0 +1,21 @@
+---
+import { overIsabella } from '../content/site';
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+
+<section id="over" class="px-6 py-24 md:py-32 bg-pure-white border-y border-ink/10">
+  <div class="max-w-5xl mx-auto grid md:grid-cols-[2fr_3fr] gap-12 items-start">
+    <img
+      src={`${base}/isabella-portret.svg`}
+      alt={overIsabella.fotoAlt}
+      loading="lazy"
+      class="w-full aspect-[4/5] object-cover rounded-sm reveal"
+    />
+    <div class="reveal">
+      <p class="mono-label text-ash mb-6">{overIsabella.label}</p>
+      <h2 class="text-heading mb-8">{overIsabella.kop}</h2>
+      {overIsabella.tekst.map((alinea) => <p class="text-body-sm text-ink/80 mb-5">{alinea}</p>)}
+    </div>
+  </div>
+</section>

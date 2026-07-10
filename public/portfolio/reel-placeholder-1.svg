@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 640" width="360" height="640">
+  <rect width="360" height="640" fill="#e9e7e2"/>
+  <rect x="1" y="1" width="358" height="638" fill="none" stroke="#82868e" stroke-width="2" stroke-dasharray="8 8"/>
+  <text x="180" y="308" text-anchor="middle" font-family="'DM Mono', monospace" font-size="16" letter-spacing="0.5" fill="#82868e">REEL 1</text>
+  <text x="180" y="334" text-anchor="middle" font-family="'DM Mono', monospace" font-size="12" letter-spacing="0.5" fill="#82868e">9:16 · PLACEHOLDER</text>
+</svg>

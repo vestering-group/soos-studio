@@ -1,0 +1,20 @@
+---
+import { voorWie } from '../content/site';
+---
+
+<section id="voor-wie" class="px-6 py-24 md:py-32">
+  <div class="max-w-4xl mx-auto reveal">
+    <p class="mono-label text-ash mb-6">{voorWie.label}</p>
+    <h2 class="text-heading mb-12">{voorWie.kop}</h2>
+    <ul class="border-t border-ink/20">
+      {
+        voorWie.doelgroepen.map((groep, i) => (
+          <li class="flex items-baseline gap-6 py-4 border-b border-ink/20">
+            <span class="mono-label text-ash w-8 shrink-0">{String(i + 1).padStart(2, '0')}</span>
+            <span class="text-body">{groep}</span>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</section>

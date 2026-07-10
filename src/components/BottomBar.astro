@@ -1,0 +1,26 @@
+---
+import { site } from '../content/site';
+---
+
+<!-- Vaste witte bottom-bar: de enige persistente navigatie (Telescope-signatuur) -->
+<nav
+  aria-label="Hoofdnavigatie"
+  class="fixed bottom-0 left-0 right-0 z-40 bg-pure-white border-t-2 border-ink"
+>
+  <div class="flex items-center justify-between gap-3 px-4 sm:px-6 h-14">
+    <p class="mono-label text-ash hidden md:block">Nog 5 founding-plekken</p>
+
+    <div class="flex items-center gap-4 sm:gap-6 min-w-0">
+      <a href="#top" class="text-body-sm shrink-0">{site.naam}</a>
+      <div class="hidden lg:flex items-center gap-5">
+        <a href="#pakketten" class="mono-label hover:text-ash">Pakketten</a>
+        <a href="#werkwijze" class="mono-label hover:text-ash">Werkwijze</a>
+        <a href="#werk" class="mono-label hover:text-ash">Werk</a>
+        <a href="#over" class="mono-label hover:text-ash">Over</a>
+        <a href="#faq" class="mono-label hover:text-ash">FAQ</a>
+      </div>
+    </div>
+
+    <a href="#contact" class="btn-lime shrink-0">Plan een kennismaking</a>
+  </div>
+</nav>

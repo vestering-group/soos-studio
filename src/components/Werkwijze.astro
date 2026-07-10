@@ -1,0 +1,21 @@
+---
+import { werkwijze } from '../content/site';
+---
+
+<section id="werkwijze" class="px-6 py-24 md:py-32 bg-pure-white border-y border-ink/10">
+  <div class="max-w-4xl mx-auto">
+    <p class="mono-label text-ash mb-6 reveal">{werkwijze.label}</p>
+    <h2 class="text-heading mb-14 reveal">{werkwijze.kop}</h2>
+    <ol class="grid sm:grid-cols-2 gap-x-12 gap-y-12">
+      {
+        werkwijze.stappen.map((stap, i) => (
+          <li class="reveal">
+            <p class="mono-label text-ash mb-3">Stap {String(i + 1).padStart(2, '0')}</p>
+            <h3 class="text-body mb-2">{stap.titel}</h3>
+            <p class="text-body-sm text-ink/80">{stap.tekst}</p>
+          </li>
+        ))
+      }
+    </ol>
+  </div>
+</section>

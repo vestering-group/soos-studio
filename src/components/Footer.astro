@@ -1,0 +1,28 @@
+---
+import { site, footer } from '../content/site';
+
+const jaar = new Date().getFullYear();
+---
+
+<footer class="px-6 pt-16 pb-24 border-t-2 border-ink">
+  <div class="max-w-5xl mx-auto">
+    <p class="text-body max-w-2xl mb-12">{footer.belofte}</p>
+    <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-8">
+      <div class="flex flex-col gap-2">
+        <a href={`mailto:${site.email}`} class="mono-label hover:text-ash">{site.email}</a>
+        {site.instagram && (
+          <a href={site.instagram} target="_blank" rel="noopener" class="mono-label hover:text-ash">Instagram</a>
+        )}
+        {site.tiktok && (
+          <a href={site.tiktok} target="_blank" rel="noopener" class="mono-label hover:text-ash">TikTok</a>
+        )}
+      </div>
+      <div class="flex flex-col sm:items-end gap-2">
+        <p class="mono-label text-ash">
+          © {jaar} {site.naam} · Isabella Koper{site.kvk && ` · KvK ${site.kvk}`}
+        </p>
+        <p class="mono-label text-ash">Prijzen excl. btw</p>
+      </div>
+    </div>
+  </div>
+</footer>

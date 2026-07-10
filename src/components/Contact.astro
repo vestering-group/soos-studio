@@ -1,0 +1,65 @@
+---
+import { contact, site } from '../content/site';
+
+// Zonder Formspree-ID valt het formulier terug op een nette e-maillink.
+const heeftFormulier = Boolean(site.formspreeEndpoint);
+---
+
+<section id="contact" class="px-6 py-24 md:py-32 bg-pure-white border-t border-ink/10">
+  <div class="max-w-3xl mx-auto">
+    <p class="mono-label text-ash mb-6 reveal">{contact.label}</p>
+    <h2 class="text-heading mb-6 reveal">{contact.kop}</h2>
+    <p class="text-body-sm text-ink/80 mb-12 reveal">{contact.tekst}</p>
+
+    {
+      heeftFormulier ? (
+        <form method="POST" action={site.formspreeEndpoint} class="grid sm:grid-cols-2 gap-5 reveal">
+          <label class="flex flex-col gap-2">
+            <span class="mono-label text-ash">Naam *</span>
+            <input type="text" name="naam" required class="bg-bone-paper border border-ink/20 rounded-sm px-4 py-3 text-body-sm focus:outline-none focus:border-ink" />
+          </label>
+          <label class="flex flex-col gap-2">
+            <span class="mono-label text-ash">Bedrijf *</span>
+            <input type="text" name="bedrijf" required class="bg-bone-paper border border-ink/20 rounded-sm px-4 py-3 text-body-sm focus:outline-none focus:border-ink" />
+          </label>
+          <label class="flex flex-col gap-2">
+            <span class="mono-label text-ash">E-mail *</span>
+            <input type="email" name="email" required class="bg-bone-paper border border-ink/20 rounded-sm px-4 py-3 text-body-sm focus:outline-none focus:border-ink" />
+          </label>
+          <label class="flex flex-col gap-2">
+            <span class="mono-label text-ash">Telefoon</span>
+            <input type="tel" name="telefoon" class="bg-bone-paper border border-ink/20 rounded-sm px-4 py-3 text-body-sm focus:outline-none focus:border-ink" />
+          </label>
+          <label class="flex flex-col gap-2">
+            <span class="mono-label text-ash">Type bedrijf</span>
+            <select name="type_bedrijf" class="bg-bone-paper border border-ink/20 rounded-sm px-4 py-3 text-body-sm focus:outline-none focus:border-ink">
+              {contact.typeBedrijfOpties.map((optie) => <option value={optie}>{optie}</option>)}
+            </select>
+          </label>
+          <label class="flex flex-col gap-2">
+            <span class="mono-label text-ash">Interesse in</span>
+            <select name="pakket" class="bg-bone-paper border border-ink/20 rounded-sm px-4 py-3 text-body-sm focus:outline-none focus:border-ink">
+              {contact.pakketOpties.map((optie) => <option value={optie}>{optie}</option>)}
+            </select>
+          </label>
+          <label class="flex flex-col gap-2 sm:col-span-2">
+            <span class="mono-label text-ash">Bericht *</span>
+            <textarea name="bericht" rows="5" required class="bg-bone-paper border border-ink/20 rounded-sm px-4 py-3 text-body-sm focus:outline-none focus:border-ink" />
+          </label>
+          <div class="sm:col-span-2">
+            <button type="submit" class="btn-lime cursor-pointer">Verstuur aanvraag</button>
+          </div>
+        </form>
+      ) : (
+        <div class="reveal">
+          <a href={`mailto:${site.email}?subject=Kennismaking%20soos.studio`} class="btn-lime">
+            Mail Isabella — {site.email}
+          </a>
+          <p class="mono-label text-ash mt-6">
+            Zet in je mail: je naam, bedrijf, type zaak en waar je interesse naar uitgaat.
+          </p>
+        </div>
+      )
+    }
+  </div>
+</section>

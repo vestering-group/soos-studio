@@ -1,0 +1,53 @@
+---
+import { pakketten, losseDiensten } from '../content/site';
+---
+
+<section id="pakketten" class="px-6 py-24 md:py-32">
+  <div class="max-w-6xl mx-auto">
+    <p class="mono-label text-ash mb-6 reveal">{pakketten.label}</p>
+    <h2 class="text-heading mb-4 reveal">{pakketten.kop}</h2>
+    <p class="mono-label text-ash mb-14 reveal">{pakketten.voorwaarden}</p>
+
+    <div class="grid md:grid-cols-3 gap-5">
+      {
+        pakketten.items.map((pakket) => (
+          <article
+            class:list={[
+              'reveal bg-pure-white rounded-sm p-8 flex flex-col border',
+              pakket.populair ? 'border-ink border-2' : 'border-ink/15',
+            ]}
+          >
+            <div class="flex items-start justify-between mb-6">
+              <h3 class="text-body">{pakket.naam}</h3>
+              {pakket.populair && <span class="mono-label bg-ink text-pure-white rounded-sm px-2 py-1">Populair</span>}
+            </div>
+            <p class="text-heading mb-1">
+              {pakket.prijs}
+              <span class="text-body-sm text-ash"> {pakket.periode}</span>
+            </p>
+            <p class="text-body-sm text-ink/80 mt-6 mb-10 grow">{pakket.tekst}</p>
+            <a href="#contact" class={pakket.populair ? 'btn-lime text-center' : 'btn-ghost text-center'}>
+              Vraag {pakket.naam} aan
+            </a>
+          </article>
+        ))
+      }
+    </div>
+
+    <div class="mt-24 max-w-4xl">
+      <p class="mono-label text-ash mb-6 reveal">{losseDiensten.label}</p>
+      <h2 class="text-heading mb-12 reveal">{losseDiensten.kop}</h2>
+      <ul class="border-t border-ink/20 reveal">
+        {
+          losseDiensten.items.map((dienst) => (
+            <li class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1 py-4 border-b border-ink/20">
+              <span class="text-body-sm">{dienst.naam}</span>
+              <span class="mono-label text-ash shrink-0">{dienst.prijs}</span>
+            </li>
+          ))
+        }
+      </ul>
+      <p class="mono-label text-ash mt-6 reveal">{losseDiensten.voetnoot}</p>
+    </div>
+  </div>
+</section>

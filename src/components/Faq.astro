@@ -1,0 +1,24 @@
+---
+import { faq } from '../content/site';
+---
+
+<section id="faq" class="px-6 py-24 md:py-32">
+  <div class="max-w-3xl mx-auto">
+    <p class="mono-label text-ash mb-6 reveal">{faq.label}</p>
+    <h2 class="text-heading mb-12 reveal">{faq.kop}</h2>
+    <div class="border-t border-ink/20 reveal">
+      {
+        faq.items.map((item) => (
+          <details class="group border-b border-ink/20">
+            <summary class="flex items-baseline justify-between gap-4 py-5 cursor-pointer list-none [&::-webkit-details-marker]:hidden">
+              <span class="text-body">{item.vraag}</span>
+              <span class="mono-label text-ash shrink-0 group-open:hidden">+</span>
+              <span class="mono-label text-ash shrink-0 hidden group-open:inline">−</span>
+            </summary>
+            <p class="text-body-sm text-ink/80 pb-6 max-w-2xl">{item.antwoord}</p>
+          </details>
+        ))
+      }
+    </div>
+  </div>
+</section>

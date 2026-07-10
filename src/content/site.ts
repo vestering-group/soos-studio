@@ -25,10 +25,7 @@ export const site = {
 };
 
 export const hero = {
-  // De kop wordt gesplitst rond de inline foto.
-  kopVoor: 'Content die jouw zaak laat zien',
-  kopFotoAlt: 'Sfeerbeeld uit een lokale zaak',
-  kopNa: 'zoals ’ie écht is.',
+  kop: 'Content die jouw zaak laat zien zoals ’ie écht is.',
   subkop:
     'Eén ochtend per maand komen we shooten in jouw zaak. Jij krijgt een maand aan plaatsklare reels en foto’s die nieuwe klanten binnenbrengen. Jij runt je zaak, wij regelen je socials.',
   ctaPrimair: 'Plan een kennismaking',

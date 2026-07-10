@@ -77,19 +77,7 @@ const clusterLinks = [
   <div class="max-w-3xl text-center relative z-40">
     <p class="mono-label text-ash mb-8 intro" style="--d: 0.1s">Contentstudio voor lokale bedrijven</p>
 
-    <!-- Signatuurpatroon: foto inline in de kop, op de tekstbaseline -->
-    <h1 class="text-heading-lg intro" style="--d: 0.25s">
-      {hero.kopVoor}
-      <img
-        id="hero-inline"
-        src={`${base}/isabella-portret.jpg`}
-        alt={hero.kopFotoAlt}
-        data-idx="-1"
-        class="inline-photo inline-block h-[0.95em] w-[1.5em] object-cover rounded-sm align-baseline mx-1 cursor-pointer"
-        style="--d: 0.8s"
-      />
-      {hero.kopNa}
-    </h1>
+    <h1 class="text-heading-lg intro" style="--d: 0.25s">{hero.kop}</h1>
 
     <p class="text-body-sm text-ink max-w-2xl mx-auto mt-8 intro" style="--d: 0.45s">{hero.subkop}</p>
 
@@ -158,22 +146,4 @@ const clusterLinks = [
     img.addEventListener('click', () => wissel(img));
   });
 
-  // De inline foto in de kop wisselt vanzelf (zolang de hero in beeld is).
-  const inline = document.getElementById('hero-inline');
-  if (inline && header) {
-    inline.addEventListener('click', () => wissel(inline));
-    let timer = null;
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting && !timer) {
-          timer = setInterval(() => wissel(inline), 1800);
-        } else if (!entry.isIntersecting && timer) {
-          clearInterval(timer);
-          timer = null;
-        }
-      },
-      { threshold: 0.3 }
-    );
-    observer.observe(header);
-  }
 </script>

@@ -13,7 +13,7 @@ import { foundingLocals } from '../content/site';
     <ul class="text-left bg-pure-white rounded-sm border border-ink/15 divide-y divide-ink/10 mb-8">
       {
         foundingLocals.stack.map((item) => (
-          <li class="flex items-baseline justify-between gap-4 px-6 py-4">
+          <li class="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between sm:gap-4 px-6 py-4">
             <span class="text-body-sm">{item.wat}</span>
             <span class="mono-label text-ash shrink-0">{item.waarde}</span>
           </li>

@@ -81,9 +81,11 @@ const clusterLinks = [
     <h1 class="text-heading-lg intro" style="--d: 0.25s">
       {hero.kopVoor}
       <img
+        id="hero-inline"
         src={`${base}/isabella-portret.jpg`}
         alt={hero.kopFotoAlt}
-        class="inline-photo inline-block h-[0.95em] w-auto rounded-sm align-baseline mx-1"
+        data-idx="-1"
+        class="inline-photo inline-block h-[0.95em] w-[1.5em] object-cover rounded-sm align-baseline mx-1 cursor-pointer"
         style="--d: 0.8s"
       />
       {hero.kopNa}
@@ -141,14 +143,34 @@ const clusterLinks = [
   }
 
   // Klik op een clusterfoto = volgende foto uit de pool, met een kleine pop.
+  const wissel = (img) => {
+    const next = (parseInt(img.dataset.idx, 10) + 1) % pool.length;
+    img.dataset.idx = String(next);
+    img.src = pool[next];
+    img.classList.remove('pop');
+    void img.offsetWidth;
+    img.classList.add('pop');
+  };
   document.querySelectorAll('img[data-cycle]').forEach((img) => {
-    img.addEventListener('click', () => {
-      const next = (parseInt(img.dataset.idx, 10) + 1) % pool.length;
-      img.dataset.idx = String(next);
-      img.src = pool[next];
-      img.classList.remove('pop');
-      void img.offsetWidth;
-      img.classList.add('pop');
-    });
+    img.addEventListener('click', () => wissel(img));
   });
+
+  // De inline foto in de kop wisselt vanzelf (zolang de hero in beeld is).
+  const inline = document.getElementById('hero-inline');
+  if (inline && header) {
+    inline.addEventListener('click', () => wissel(inline));
+    let timer = null;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !timer) {
+          timer = setInterval(() => wissel(inline), 1800);
+        } else if (!entry.isIntersecting && timer) {
+          clearInterval(timer);
+          timer = null;
+        }
+      },
+      { threshold: 0.3 }
+    );
+    observer.observe(header);
+  }
 </script>
